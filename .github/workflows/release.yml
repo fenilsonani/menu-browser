@@ -6,7 +6,8 @@ on:
 
 jobs:
   release:
-    runs-on: macos-15
+    # Requires macOS 26 SDK for Liquid Glass APIs
+    runs-on: macos-26
     permissions:
       contents: write
     steps:
