@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 400" width="1320" height="800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="arrow-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4a9eff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#4a9eff" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="text-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="660" height="400" fill="url(#bg)" rx="12"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.03">
+    <line x1="0" y1="0" x2="0" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="60" y1="0" x2="60" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="120" y1="0" x2="120" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="180" y1="0" x2="180" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="240" y1="0" x2="240" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="360" y1="0" x2="360" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="420" y1="0" x2="420" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="480" y1="0" x2="480" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="540" y1="0" x2="540" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="660" y1="0" x2="660" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="0" x2="660" y2="0" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="60" x2="660" y2="60" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="120" x2="660" y2="120" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="180" x2="660" y2="180" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="240" x2="660" y2="240" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="300" x2="660" y2="300" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="360" x2="660" y2="360" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="400" x2="660" y2="400" stroke="white" stroke-width="0.5"/>
+  </g>
+
+  <!-- Curved arrow from app to Applications -->
+  <g filter="url(#glow)">
+    <!-- Arrow body - curved path -->
+    <path d="M 250 210 C 290 210, 310 185, 330 185 C 350 185, 370 210, 410 210"
+          stroke="url(#arrow-grad)" stroke-width="2.5" fill="none"
+          stroke-linecap="round" stroke-dasharray="8 4"/>
+    <!-- Arrowhead -->
+    <polygon points="410,210 398,202 398,218" fill="#4a9eff" opacity="0.9"/>
+  </g>
+
+  <!-- "Drag to install" text -->
+  <text x="330" y="310" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif"
+        font-size="14" font-weight="300" letter-spacing="2"
+        fill="#4a9eff" opacity="0.7" filter="url(#text-glow)">
+    DRAG TO INSTALL
+  </text>
+
+  <!-- Subtle bottom accent line -->
+  <line x1="230" y1="335" x2="430" y2="335" stroke="#4a9eff" stroke-width="0.5" opacity="0.2"/>
+</svg>

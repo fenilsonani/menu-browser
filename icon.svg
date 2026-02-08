@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0.3" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0.04"/>
+    </linearGradient>
+    <clipPath id="gc">
+      <circle cx="512" cy="512" r="265"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="32" y="32" width="960" height="960" rx="215" fill="url(#bg)"/>
+  <rect x="32" y="32" width="960" height="960" rx="215" fill="url(#shine)"/>
+  <rect x="33" y="33" width="958" height="958" rx="214" fill="none" stroke="#fff" stroke-opacity="0.08" stroke-width="1.5"/>
+
+  <!-- Globe centered -->
+  <g clip-path="url(#gc)">
+    <circle cx="512" cy="512" r="263" fill="none" stroke="#fff" stroke-width="20"/>
+    <ellipse cx="512" cy="512" rx="100" ry="263" fill="none" stroke="#fff" stroke-opacity="0.65" stroke-width="14"/>
+    <ellipse cx="512" cy="512" rx="190" ry="263" fill="none" stroke="#fff" stroke-opacity="0.3" stroke-width="11"/>
+    <line x1="230" y1="415" x2="794" y2="415" stroke="#fff" stroke-opacity="0.4" stroke-width="12" stroke-linecap="round"/>
+    <line x1="230" y1="512" x2="794" y2="512" stroke="#fff" stroke-opacity="0.5" stroke-width="12" stroke-linecap="round"/>
+    <line x1="230" y1="609" x2="794" y2="609" stroke="#fff" stroke-opacity="0.4" stroke-width="12" stroke-linecap="round"/>
+  </g>
+</svg>
