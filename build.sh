@@ -34,13 +34,13 @@ mkdir -p "${CONTENTS}/Resources"
 cp AppIcon.icns "${CONTENTS}/Resources/AppIcon.icns"
 
 echo "Code signing..."
-SIGN_IDENTITY=$(security find-identity -v -p codesigning | head -1 | sed 's/.*"\(.*\)".*/\1/')
+SIGN_IDENTITY=$(security find-identity -v -p codesigning 2>/dev/null | grep -o '"[^"]*"' | head -1 | tr -d '"' || true)
 if [ -n "$SIGN_IDENTITY" ]; then
     codesign --force --sign "$SIGN_IDENTITY" "${APP_BUNDLE}"
     echo "Signed with: $SIGN_IDENTITY"
 else
     codesign --force --sign - "${APP_BUNDLE}"
-    echo "Warning: ad-hoc signed (Accessibility permission will reset on rebuild)"
+    echo "Ad-hoc signed (no identity found)"
 fi
 
 echo "Build complete: ${APP_BUNDLE}"
